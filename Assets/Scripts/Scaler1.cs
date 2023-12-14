@@ -7,10 +7,12 @@ public class Scaler1 : MonoBehaviour
 
     public float maxSize = 1.5f;
     public float minSize = 0.3f;
+
     
-    void Start()
+    
+    private void Start()
     {
-        
+        AudioDetector.inst.onBeat.AddListener(Scale);
     }
 
     public void Scale(float t)

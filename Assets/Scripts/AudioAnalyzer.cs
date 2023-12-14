@@ -67,4 +67,16 @@ public class AudioDetector : MonoBehaviour
     {
         audiosource.time = value * audiosource.clip.length;
     }
+
+    public void Pause(bool pause)
+    {
+        if (pause)
+        {
+            audiosource.Pause();
+        }
+        else
+        {
+            audiosource.Play();
+        }
+    }
 }

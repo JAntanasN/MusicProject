@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class Songslider : MonoBehaviour
 {
-    Slider slider;
+    public Slider slider;
     //private float value;
 
     bool autoSlide = true;
@@ -14,6 +14,8 @@ public class Songslider : MonoBehaviour
     private void Start()
     {
         slider = GetComponent<Slider>();
+        AudioDetector.inst.onPlay.AddListener(UpdateSlider);
+        slider.onValueChanged.AddListener(SkipThru);
     }
 
     private void Update()
